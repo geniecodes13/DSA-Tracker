@@ -21,6 +21,10 @@ A minimal, personal DSA (Data Structures & Algorithms) progress tracker built us
 3) Semester revision of DSA
 4) Daily habit building for problem-solving
 
+**web link:**
+you can checkout the project here:
+https://yourdsatracker.netlify.app/
+
 
 
 
