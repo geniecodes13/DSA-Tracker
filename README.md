@@ -15,11 +15,11 @@ A minimal, personal DSA (Data Structures & Algorithms) progress tracker built us
 4) LocalStorage – Data Persistence
 
 **🚀 Use Case**
-1) Ideal for students preparing for:
-2) Coding interviews
-3) Competitive programming
-4) Semester revision of DSA
-5) Daily habit building for problem-solving
+ Ideal for students preparing for:
+1) Coding interviews
+2) Competitive programming
+3) Semester revision of DSA
+4) Daily habit building for problem-solving
 
 
 
