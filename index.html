@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DSA Tracker</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="title-group">
+          <h1>
+            <span class="title-accent-dot"></span>
+            DSA Tracker
+          </h1>
+          <p>
+            Organize your practice by time period and mark problems as
+            completed.
+          </p>
+        </div>
+        <div class="header-meta">
+          <span id="todayDisplay"></span>
+          <span>Progress saved in this browser.</span>
+        </div>
+      </header>
+
+      <!-- Add Task Card -->
+      <section class="card">
+        <div class="card-header">
+          <h2>New Problem</h2>
+          <small>Quickly log a DSA problem to solve.</small>
+        </div>
+        <form id="taskForm">
+          <div class="form-grid">
+            <div class="form-group form-title">
+              <label for="title">Problem Title *</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="e.g. 2-Sum, Reverse Linked List"
+                required
+              />
+            </div>
+
+            <div class="form-group form-topic">
+              <label for="topic">Topic</label>
+              <input
+                type="text"
+                id="topic"
+                placeholder="e.g. Arrays, DP, Graphs"
+              />
+            </div>
+
+            <div class="form-group form-diff">
+              <label for="difficulty">Difficulty</label>
+              <select id="difficulty">
+                <option value="Easy">Easy</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div>
+            <div class="form-group form-period">
+              <label for="period">Time Period</label>
+              <select id="period">
+                <option value="today">Today</option>
+                <option value="week">This Week</option>
+                <option value="later">Later</option>
+              </select>
+            </div>
+
+            <div class="form-group form-notes">
+              <label for="notes">Notes</label>
+              <textarea
+                id="notes"
+                placeholder="Short notes, approach, or link (e.g. LeetCode / GFG URL)"
+              ></textarea>
+            </div>
+
+            <div class="form-group form-submit">
+              <button type="submit" class="btn-primary">
+                <span class="icon">＋</span>
+                <span>Add Problem</span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="small-actions">
+          <button type="button" class="btn-secondary" id="clearAllBtn">
+            Clear all
+          </button>
+          <button
+            type="button"
+            class="btn-secondary"
+            id="clearCompletedBtn"
+          >
+            Clear completed
+          </button>
+        </div>
+      </section>
+
+      <!-- Task Columns -->
+      <section>
+        <div class="columns-header">
+          <h2>Plan by Time Period</h2>
+          <small
+            >Drag-and-drop isn’t required; just choose the period when
+            adding.</small
+          >
+        </div>
+
+        <div class="columns">
+          <div class="column column--today" data-period="today">
+            <div class="column-title">
+              <span>Today</span>
+              <span class="column-count" data-count="today">0</span>
+            </div>
+            <div class="column-body" id="list-today">
+              <div class="empty-state">
+                No tasks for today yet. Add a problem above.
+              </div>
+            </div>
+          </div>
+          <div class="column column--week" data-period="week">
+            <div class="column-title">
+              <span>This Week</span>
+              <span class="column-count" data-count="week">0</span>
+            </div>
+            <div class="column-body" id="list-week">
+              <div class="empty-state">
+                Plan a few problems for this week.
+              </div>
+            </div>
+          </div>
+
+          <div class="column column--later" data-period="later">
+            <div class="column-title">
+              <span>Later</span>
+              <span class="column-count" data-count="later">0</span>
+            </div>
+            <div class="column-body" id="list-later">
+              <div class="empty-state">
+                Backlog of problems to tackle soon.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Completed Section -->
+      <section class="completed-section">
+        <div class="completed-header">
+          <h2>Completed</h2>
+          <small>Problems you’ve ticked off.</small>
+        </div>
+        <div id="completedList" class="completed-list">
+          <span class="completed-empty"
+            >Nothing solved yet. Start by checking some tasks
+            above.</span
+          >
+        </div>
+      </section>
+    </div>
+
+    <script src="body.js"></script>
+  </body>
+</html>
